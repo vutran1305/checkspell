@@ -1,0 +1,313 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+	 <script src="ckeditor/ckeditor.js"></script>
+    <title>Kiểm tra chính tả tiếng Việt</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  </head>
+
+	<style>
+
+			.leftDiv
+			{
+				margin-top : 40px;
+				background-color: #0000;
+				color: #000;
+				height: 500px;
+				width: 69%;
+				float: left;
+				border: 1px solid black;
+				margin-left : 5px;
+			}
+			.rightDiv
+			{
+				margin-top : 40px;
+				background-color: #0000;
+				color: #000;
+				height: 500px;
+				width: 30%;
+				float: right;
+				border: 1px solid black;
+			}
+			.check{
+				margin-top : 60px;
+
+				height: 500px;
+				width: 80%;
+				float: center;
+				}
+			.textara{
+
+				height: 500px;
+				width: 95%;
+				float: center;
+				}
+
+}
+
+
+
+
+	</style>
+	<script>
+	function myFunction(e) {
+    document.getElementById("myText").value = e.target.value
+	}
+	</script>
+	<script>
+	$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	});
+	</script>
+
+	<script>
+$('#nextError').click(function(){
+   $(this).parent().hide().next().show();//hide parent and show next
+});
+
+$('#previousError').click(function(){
+   $(this).parent().hide().prev().show();//hide parent and show previous
+});
+</script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Kiểm tra chính tả tiếng Việt</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hỏi đáp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+	<div class="outerDiv">
+			<div class="leftDiv">
+
+			<center><div class="textara">
+			<center><label for="exampleFormControlTextarea6"><h4>Kết quả</h4></label></center>
+			<textarea  class = "form-control "id="ten" height = "500px" rows = "18" cols = "120" >{{ text }}</textarea></center>
+
+			</div>
+			</div>
+
+
+
+			<div class="rightDiv">
+			<button id="firstError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi đầu tiên" title=""><span class="glyphicon glyphicon-step-backward"></span></button>
+			<button id="previousError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi trước" title=""><span class="glyphicon glyphicon-chevron-left"></span></button>
+			<button id="nextError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi kế tiếp" title=""><span class="glyphicon glyphicon-chevron-right"></span></button>
+			<button id="lastError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi cuối cùng" title=""><span class="glyphicon glyphicon-step-forward"></span></button>
+
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-12">
+							<!-- misspelled nav buttons -->
+							
+
+							<div class="form-group space-top-lg">
+
+								<div>
+									<label class="control-label" for="correctedText" id="replaceLbl">Lỗi</label>
+									<input class="form-control" id="misspelledText" value="" type="text" readonly="readonly" />
+
+								</div>
+							</div>
+							<form name = "fom">
+							<div class="form-group space-top-lg">
+								<label class="control-label" for="correctedText" id="replaceLbl">Thay thế:</label>
+								<div>
+									<input class="form-control" id="myText" type="text" name="box" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label" for="suggestions" id="suggestionLbl">Gợi &#253;:</label>
+								<div>
+
+									<select onchange="myFunction(event)" class="form-control" size="8" id="suggestions" selectedindex="0" name =  "sel">
+									<option value="mót">mót</option>
+									<option value="mọt">mọt</optiSon>
+									<option value="mốt">mốt</option>
+									<option value="một">một</option>
+									</select>
+
+								</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<center><div class="check"> <button type="button" class="btn btn-lg btn-primary btn-block" width = "150px">Sửa lỗi </button></div>
+				</center>
+
+
+
+			</div>
+			
+			
+			
+			<div class="rightDiv" style="display:none;>
+			<button id="firstError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi đầu tiên" title=""><span class="glyphicon glyphicon-step-backward"></span></button>
+			<button id="previousError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi trước" title=""><span class="glyphicon glyphicon-chevron-left"></span></button>
+			<button id="nextError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi kế tiếp" title=""><span class="glyphicon glyphicon-chevron-right"></span></button>
+			<button id="lastError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi cuối cùng" title=""><span class="glyphicon glyphicon-step-forward"></span></button>
+
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-12">
+							<!-- misspelled nav buttons -->
+							
+
+							<div class="form-group space-top-lg">
+
+								<div>
+									<label class="control-label" for="correctedText" id="replaceLbl">Lỗi</label>
+									<input class="form-control" id="misspelledText" value="" type="text" readonly="readonly" />
+
+								</div>
+							</div>
+							<form name = "fom">
+							<div class="form-group space-top-lg">
+								<label class="control-label" for="correctedText" id="replaceLbl">Thay thế:</label>
+								<div>
+									<input class="form-control" id="myText" type="text" name="box" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label" for="suggestions" id="suggestionLbl">Gợi &#253;:</label>
+								<div>
+
+									<select onchange="myFunction(event)" class="form-control" size="8" id="suggestions" selectedindex="0" name =  "sel">
+									<option value="mót">2</option>
+									<option value="mọt">hai</optiSon>
+									<option value="mốt">hai</option>
+									<option value="một">2</option>
+									</select>
+
+								</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<center><div class="check"> <button type="button" class="btn btn-lg btn-primary btn-block" width = "150px">Sửa lỗi </button></div>
+				</center>
+
+
+
+			</div>
+			
+			
+			
+			<div class="rightDiv" style="display:none;>
+			<button id="firstError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi đầu tiên" title=""><span class="glyphicon glyphicon-step-backward"></span></button>
+			<button id="previousError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi trước" title=""><span class="glyphicon glyphicon-chevron-left"></span></button>
+			<button id="nextError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi kế tiếp" title=""><span class="glyphicon glyphicon-chevron-right"></span></button>
+			<button id="lastError" class="btn btn-default" data-toggle="tooltip" data-original-title="Đi tới lỗi cuối cùng" title=""><span class="glyphicon glyphicon-step-forward"></span></button>
+
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-12">
+							<!-- misspelled nav buttons -->
+							
+
+							<div class="form-group space-top-lg">
+
+								<div>
+									<label class="control-label" for="correctedText" id="replaceLbl">Lỗi</label>
+									<input class="form-control" id="misspelledText" value="" type="text" readonly="readonly" />
+
+								</div>
+							</div>
+							<form name = "fom">
+							<div class="form-group space-top-lg">
+								<label class="control-label" for="correctedText" id="replaceLbl">Thay thế:</label>
+								<div>
+									<input class="form-control" id="myText" type="text" name="box" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label" for="suggestions" id="suggestionLbl">Gợi &#253;:</label>
+								<div>
+
+									<select onchange="myFunction(event)" class="form-control" size="8" id="suggestions" selectedindex="0" name =  "sel">
+									<option value="mót">ba</option>
+									<option value="mọt">ba</optiSon>
+									<option value="mốt">3</option>
+									<option value="một">3</option>
+									</select>
+
+								</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<center><div class="check"> <button type="button" class="btn btn-lg btn-primary btn-block" width = "150px">Sửa lỗi </button></div>
+				</center>
+
+
+
+			</div>
+			<div "style: clear:both;"></div>
+	</div>
+
+</body>
+
+</html>
+
+
+<div class="first-div">
+   DIV 1
+   <button class="next">Next</button>
+</div>
+<div class="next-div" style="display:none;">
+   DIV 2
+   <button class="back">Back</button>
+   <button class="next">Next</button>
+</div>
+<div class="next-div" style="display:none;">
+   DIV 3
+   <button class="back">Back</button>
+   <button class="next">Next</button>
+</div>
+<div class="next-div" style="display:none;">
+   DIV 4
+   <button class="back">Back</button>
+</div>
+

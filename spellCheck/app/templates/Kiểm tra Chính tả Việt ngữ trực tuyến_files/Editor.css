@@ -1,0 +1,121 @@
+﻿/*
+body {
+	font-family: verdana, arial, helvetica;
+	font-size:14px;
+	font-weight:normal;
+}
+
+#spellMenu 
+{
+    height: 30px;
+	background-color: lightgrey;
+	padding: 2px 0px 2px 0px;
+}
+
+#spellLeftPanel
+{
+  float: left;
+  margin: 5px 1px 1px 5px;
+  width: 450px;
+}
+
+#spellRightPanel
+{
+  float: right;
+  margin: 2px;
+  width: 150px;
+}
+
+
+.floatRight {
+    float: right;
+}
+
+.spellButton
+{
+    width: 120px;
+    margin: 0px 0px 5px 0px;
+}
+
+
+#suggestions 
+{
+    width: 105px;
+}
+
+fieldset {
+    border: none;
+}
+
+#spellDialogInput label, #spellDialog input 
+{
+    display: inline-block;
+}
+
+#spellDialogInput label {
+    width: 120px;
+    text-align: right;
+    vertical-align: top;
+}
+
+#spellDialogInput input{
+    width: 100px;
+}
+
+.center 
+{
+    text-align: center;
+}
+
+span.suggestion{
+	background: url('wave.gif') repeat-x left bottom;
+	background-color:red;
+}
+
+#spellMenuExpanded
+{
+	width: 800px;
+    height: 600px;
+}
+
+
+
+
+
+
+
+
+
+table#spellDialog {
+	border-collapse: collapse; 
+}
+
+
+.textLabel 
+{
+    text-align:right;
+    width: 150px;
+}
+
+#spellDialog 
+{
+    margin-left: auto;
+}
+
+
+table#spellDialog td,table th {
+	padding-top: 5px; 
+	vertical-align: top;
+} 
+
+
+
+.spellStatus
+{
+	font-family:Sans-Serif;
+	font-size: small;
+	padding-top: 4px;
+}
+*/
+
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+     <title>Kiểm tra chính tả tiếng Việt</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+<style>
+.leftDiv{
+	border: 1px solid #aaa;
+	margin-left:15px;
+	background-color: #eee;
+}
+    .outerDiv{
+    display:flex
+}
+.row-button{
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+
+    align-items:center ;
+}
+.row-button .btn-default{
+outline: none;
+border: none;
+background-color: #f5f5f5;
+}
+.row-button .btn{
+    flex:0 20%
+}
+.outerDiv{
+    margin-top: 20px;
+}
+.right{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    padding: 20px;
+
+}
+
+
+
+.hwt-container {
+
+    background: white;
+}
+
+
+
+.listbox-area {
+  padding: 20px;
+  background: #eee;
+  border: 1px solid #aaa;
+  font-size: 0;
+  height:100%;
+  margin-right:10px;
+
+}
+
+.left-area,
+.right-area {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  width: 100%;
+}
+
+.left-area {
+  padding-right: 10px;
+}
+
+.right-area {
+  padding-left: 10px;
+}
+
+
+.textara {
+	  background-color:white;
+	  height: 440px;
+	  width: 100%;
+	  overflow: auto;
+	  border: 1px solid #CCCCCC;
+	  margin: 1em 0;
+
+	}
+.vb{
+	padding: 10px;
+	padding-left: 15px;
+
+}
+.selec {
+  width :100%;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  margin-top:7px;
+  overflow-x: auto;
+
+}
+select[multiple], select[size] {
+    height: 30em;
+}
+.op{
+	display: block;
+    padding: 0.5em 1em 0.5em 1em;
+    position: relative;
+    line-height: 2em;
+}
+mark {
+    padding : 0.5px;
+    background-color: #2EFEC8;
+    color: black;
+}
+</style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style = "margin :0;">
+    <a class="navbar-brand" href="#">Kiểm tra chính tả tiếng Việt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Hỏi đáp</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Giới thiệu</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<div class="outerDiv" >
+    <div class="leftDiv col-lg-7" >
+
+        <h4><label for="exampleFormControlTextarea6" style="color: brown;">Kết quả : </label></h4>
+            <div  class="textara"   >
+
+                <p class = "vb" contenteditable="false">{{text|safe}}
+                {% for i in arr%}
+                    {{i}}
+                    {% endfor %}
+
+                </p>
+
+		</div>
+</div>
+
+
+<div class="rightDiv col-lg-5">
+    <div class="listbox-area">
+        <div class="left-area">
+          <span style="color:red">
+            Danh sách lỗi tìm thấy:
+          </span><br/>
+
+          <select class="selec" multiple >
+<!--			<option class="op">Lỗi 1: ["quả tranh"] - Loại lỗi : [ Phụ âm đầu ]- Gợi ý : [ quả chanh ,.... ]</p></option>-->
+<!--              <option disabled style="font-style:italic ; color:red">&emsp;&emsp;&emsp;&nbsp;Gợi ý sửa lỗi :</option>-->
+<!--            <option disabled style="font-style:italic">&emsp;&emsp;&emsp;&emsp; -tranh đua </option>-->
+<!--              <option disabled style="font-style:italic">&emsp;&emsp;&emsp;&emsp; -tranh giành </option>-->
+<!--              <option disabled style="font-style:italic">&emsp;&emsp;&emsp;&emsp; -tranh nhau </option>-->
+              {% for i in arr %}
+              <option class="op" id = {{i.stt}}>Lỗi {{i.stt}}: ["{{i.loi}}"] - Loại lỗi : [ Phụ âm đầu ]</p></option>
+              <option disabled style="font-style:italic ; color:red">&emsp;&emsp;&emsp;&nbsp;Gợi ý  :</option>
+
+              {% for j in i.goiy %}
+                <option disabled style="font-style:italic">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; - {{j}} </option>
+              {%endfor%}
+              {%endfor%}
+
+
+			<option class="op">Lỗi 2: ["bánh trưng"] - Loại lỗi : [ Phụ âm đầu ]- Gợi ý : [ bánh chưng ,.... ] </option>
+			<option class="op">Lỗi 3: ["bạc mạng"] - Loại lỗi : [ Phụ âm đầu ]- Gợi ý : [ bạt mạng ,.... ] </option>
+			<option class="op">Lỗi 4: ["Củ xắn"] - Loại lỗi : [ Phụ âm đầu ]- Gợi ý : [ Củ sắn ,.... ] </option>
+			<option class="op">Lỗi 5: ["Căn giặn"] - Loại lỗi : [ Phụ âm đầu ]- Gợi ý : [ Căn dặn ,.... ]</option>
+			<option class="op">Lỗi 6: ["Chín mùi"] - Loại lỗi : [ Phụ âm đầu ]- Gợi ý : [ Chín muồi ,.... ]</option>
+
+		  </select>
+        </div>
+      </div>
+
+</div>
+
+
+</div>
+
+<div "style: clear:both;"></div>
+</div>
+
+</body>
+
+
+
+
+
+</html>
+
+
+
+
+
+
